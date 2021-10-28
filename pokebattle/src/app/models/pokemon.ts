@@ -1,5 +1,8 @@
 export class Pokemon {
-    
-    constructor(public name:string, public types:any[], public sprites:any){ }
+
+    public type:string = "";
+
+    constructor(public name:string, public sprites:any){ 
+    }
 
 }

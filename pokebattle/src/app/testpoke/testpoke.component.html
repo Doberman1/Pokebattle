@@ -1,0 +1,7 @@
+<div class="container-fluid">
+    <div class="row">
+        <button class="col-sm-4 btn btn-primary" (click)="getRandomPokemon()">Get a random Pokemon!</button>
+    </div>
+    <p *ngIf="pokemon">{{pokemon.type}}</p>
+    <img [src]="pokemon.sprites?.front_default" *ngIf="pokemon">
+</div>
