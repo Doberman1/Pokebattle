@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NasaBgComponent } from './components/nasa-bg/nasa-bg.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { WelcomepageComponent } from './components/welcomepage/welcomepage.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NasaBgComponent
+    NasaBgComponent,
+    WelcomepageComponent
   ],
   imports: [
     BrowserModule,
