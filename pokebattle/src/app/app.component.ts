@@ -10,9 +10,9 @@ import { Pokemon } from './models/pokemon';
 })
 export class AppComponent {
   title = 'pokebattle';
-
   //public ourPokemon:Pokemon = pokeService.getOurPoke();
   //public theirPokemon:Pokemon = pokeService.getTheirPoke();
+
   public winner:number = 0;
 
   constructor(private BattleService:BattleService) { }

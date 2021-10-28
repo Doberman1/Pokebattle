@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Pokemon } from 'c:/Users/Me/Desktop/Pokebattle/pokebattle/src/app/models/pokemon';
+import { Pokemon } from '../models/pokemon';
 
 
 @Injectable({
