@@ -42,7 +42,7 @@ export class NasaBgComponent implements OnInit {
     if(this.index === 1){
       this.index = 0;
     }else{
-      this.index = 1;
+      this.index = 1; 
     }
     this.stateChange(this);
   }
