@@ -11,8 +11,8 @@ import { Pokemon } from './models/pokemon';
 export class AppComponent {
   title = 'pokebattle';
 
-  public ourPokemon:Pokemon = pokeService.getOurPoke();
-  public theirPokemon:Pokemon = pokeService.getTheirPoke();
+  //public ourPokemon:Pokemon = pokeService.getOurPoke();
+  //public theirPokemon:Pokemon = pokeService.getTheirPoke();
   public winner:number = 0;
 
   constructor(private BattleService:BattleService) { }
@@ -21,7 +21,7 @@ export class AppComponent {
   }
 
   battle(){
-     this.winner = this.BattleService.battlePokemon(this.ourPokemon, this.theirPokemon);    
+    // this.winner = this.BattleService.battlePokemon(this.ourPokemon, this.theirPokemon);    
   }
 
 }
