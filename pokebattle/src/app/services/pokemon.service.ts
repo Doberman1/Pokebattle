@@ -24,12 +24,17 @@ export class PokemonService {
     return this.http.get<object[]>("https://pokeapi.co/api/v2/pokemon/" + id + "/") as Observable<Pokemon[]>;
   }
 
-  async populateListOfFirePokemons(){
-    let data:Observable<Pokemonlist>= await this.fetchListOfPokemonsOfType("fire") as Observable<Pokemonlist>;
-    data.subscribe(value => this.firePokemon = value);
+  fetchPokemonFromApiByName(name:string):Observable<Pokemon>{
+    return this.http.get("https://pokeapi.co/api/v2/pokemon/" + name + "/") as Observable<Pokemon>;
   }
 
-  grabRandomFirePokemon(randomInt:number)
+  populateListOfFirePokemons(){
+    let data:Observable<Pokemonlist>= this.fetchListOfPokemonsOfType("fire") as Observable<Pokemonlist>;
+    data.subscribe(value => this.firePokemon = value);
+    return data;
+  }
+
+  fetchRandomPokemon(randomInt:number)
   {
     let pokemon:Observable<Pokemon>|null = null;
     switch(randomInt)
@@ -61,13 +66,15 @@ export class PokemonService {
 
 
 
-  async populateListOfWaterPokemons(){
-    let data:Observable<Pokemonlist> = await this.fetchListOfPokemonsOfType("water") as Observable<Pokemonlist>;
+  populateListOfWaterPokemons(){
+    let data:Observable<Pokemonlist> = this.fetchListOfPokemonsOfType("water") as Observable<Pokemonlist>;
     data.subscribe(value => this.waterPokemon = value);
+    return data;
   }
 
-  async populateListOfGrassPokemons(){
-    let data:Observable<Pokemonlist> = await this.fetchListOfPokemonsOfType("grass") as Observable<Pokemonlist>;
+  populateListOfGrassPokemons(){
+    let data:Observable<Pokemonlist> = this.fetchListOfPokemonsOfType("grass") as Observable<Pokemonlist>;
     data.subscribe(value => this.grassPokemon = value);
+    return data;
   }
 }

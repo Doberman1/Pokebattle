@@ -29,7 +29,7 @@ body{
     color: white;
 }
 .top p {
-    background-color: black;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     margin-left: auto;
     width: 45%;
     padding: 10px; 

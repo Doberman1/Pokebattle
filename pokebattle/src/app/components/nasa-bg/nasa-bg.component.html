@@ -1,15 +1,23 @@
-
-        <div style="background-image: url({{apod?.hdurl}});" class="battlebox mb-5" >
-           
+<nav class="navbar navbar-dark navbar-expand-sm justify-content-center">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="play">Play</a>
+      </li>
+    </ul>
+</nav> 
+        <div style="background-image: url({{apod?.hdurl}});" class="battlebox mb-5" >          
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12"><div class="top"><p>Astronomy: {{apod?.title}} - <span>Victory count: {{cont}}</span></p></div></div>
+                    <div class="col-sm-12"><div class="top"><p>Astronomy: {{apod?.title}} - <span>Victory streak: {{cont}}</span></p></div></div>
                 </div>
                 <div class="row">
                     <div class="col-md-4"></div>
                     <div class="col-md-4 align-items-center">
                         <div class="fightbox">
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="">
+                            <img [src]="contender.sprites?.front_default" *ngIf="contender">
                         </div>
                     </div> 
                     <div class="col-md-4"></div>
@@ -23,22 +31,24 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4 align-items-center"> 
-                        <div class="fightbox" (click)="Fight()">
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/34.png"  alt="">
+                        <div class="fightbox" (click)="Fight(firePokemon, contender);" *ngIf="firePokemon && contender">
+                            <img [src]="firePokemon.sprites?.front_default" *ngIf="firePokemon">
                         </div>
                     </div>
                     <div class="col-md-4 align-items-center">
-                        <div class="fightbox" (click)="Fight()">
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png" alt="">
+                        <div class="fightbox" (click)="Fight(waterPokemon, contender);" *ngIf="waterPokemon && contender">
+                            <img [src]="waterPokemon.sprites?.front_default" *ngIf="waterPokemon">
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="fightbox" (click)="Fight()">
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png"  alt="">
+                        <div class="fightbox" (click)="Fight(grassPokemon, contender);" *ngIf="grassPokemon && contender">
+                            <img [src]="grassPokemon.sprites?.front_default" *ngIf="grassPokemon">
                         </div>
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-sm-12"><div class="top"><p><b>Select a pokemon you think will beat the one on top!</b></p></div></div>
+                </div>
             </div>
         </div>
 

@@ -2,7 +2,7 @@ export class Pokemon {
 
 
     
-    constructor(public name:string, public types:string, public sprites:any){ }
+    constructor(public name:string, public type:string, public sprites:any){ }
 
 
 }

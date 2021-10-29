@@ -21,7 +21,7 @@ export class TestpokeComponent implements OnInit {
 
   getRandomPokemon(){ //replace string with Pokemon model
     let randomInt:number =  Math.floor(Math.random() * 3);
-    this.pokeService.grabRandomFirePokemon(randomInt)?.subscribe(
+    this.pokeService.fetchRandomPokemon(randomInt)?.subscribe(
       (value:Pokemon)=>{
         this.pokemon=value;
         switch(randomInt)

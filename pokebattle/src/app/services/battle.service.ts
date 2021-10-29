@@ -11,21 +11,16 @@ export class BattleService {
 
   battlePokemon(yours:Pokemon, theirs:Pokemon):number{
 
-    if(yours.types == theirs.types){
-
+    if(yours.type == theirs.type){
       return 0;
-
-    }else if(yours.types == "fire" && theirs.types == "grass"){
+    }else if(yours.type == "fire" && theirs.type == "grass"){
+      return 1;
+    }else if(yours.type == "grass" && theirs.type == "water"){
 
       return 1;
-    }else if(yours.types == "grass" && theirs.types == "water"){
-
-      return 1;
-    }else if(yours.types == "water" && theirs.types == "fire"){
-
+    }else if(yours.type == "water" && theirs.type == "fire"){
       return 1;
     }else{
-
       return 2;
     }
   }
