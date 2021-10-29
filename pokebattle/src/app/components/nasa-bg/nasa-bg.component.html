@@ -22,6 +22,11 @@
                     </div> 
                     <div class="col-md-4"></div>
                 </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4  d-flex align-items-cente"><span class="power" [hidden] = "visibility" style="color: red;">{{contender?.type}}</span></div>
+                    <div class="col-md-4"></div>
+                </div>
                 <div class="row middle">
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
@@ -30,21 +35,29 @@
                     <div class="col-md-3"></div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 align-items-center"> 
+                    <div class="col-md-4"> 
                         <div class="fightbox" (click)="Fight(firePokemon, contender);" *ngIf="firePokemon && contender">
-                            <img [src]="firePokemon.sprites?.front_default" *ngIf="firePokemon">
+                            <img [src]="fireSrc" *ngIf="firePokemon" (mouseover)="fireSrc = firePokemon.sprites.front_default"
+                            (mouseout)="fireSrc = firePokemon.sprites.back_default">
                         </div>
                     </div>
-                    <div class="col-md-4 align-items-center">
+                    <div class="col-md-4">
                         <div class="fightbox" (click)="Fight(waterPokemon, contender);" *ngIf="waterPokemon && contender">
-                            <img [src]="waterPokemon.sprites?.front_default" *ngIf="waterPokemon">
+                            <img [src]="waterSrc" *ngIf="waterPokemon" (mouseover)="waterSrc = waterPokemon.sprites.front_default"
+                            (mouseout)="waterSrc = waterPokemon.sprites.back_default">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="fightbox" (click)="Fight(grassPokemon, contender);" *ngIf="grassPokemon && contender">
-                            <img [src]="grassPokemon.sprites?.front_default" *ngIf="grassPokemon">
+                            <img [src]="grassSrc" *ngIf="grassPokemon" (mouseover)="grassSrc = grassPokemon.sprites.front_default"
+                            (mouseout)="grassSrc = grassPokemon.sprites.back_default">
                         </div>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 d-flex align-items-cente"><span class="power" style="color: red;">Fire</span> </div>
+                    <div class="col-md-4 d-flex align-items-cente"><span class="power" style="color: blue;">Water</span></div>
+                    <div class="col-md-4 d-flex align-items-cente"><span class="power" style="color: green;">Grass</span></div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12"><div class="top"><p><b>Select a pokemon you think will beat the one on top!</b></p></div></div>

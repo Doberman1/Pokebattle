@@ -23,6 +23,9 @@ export class NasaBgComponent implements OnInit {
   public img:string = this.result[0];
   public index:number = 0;
   public decisionMade:boolean = false;
+  public waterSrc:string = "";
+  public fireSrc:string = "";
+  public grassSrc:string = "";
 
   private retrievedFirstPokemon = false;
 
@@ -47,6 +50,7 @@ export class NasaBgComponent implements OnInit {
       (value:Pokemon)=>{
         this.firePokemon=value;
         this.firePokemon.type = "fire";
+        this.fireSrc = this.firePokemon.sprites.back_default;
       },
       (error)=>{
         this.contender=null;
@@ -57,6 +61,7 @@ export class NasaBgComponent implements OnInit {
       (value:Pokemon)=>{
         this.waterPokemon=value;
         this.waterPokemon.type = "water";
+        this.waterSrc = this.waterPokemon.sprites.back_default;
       },
       (error)=>{
         this.contender=null;
@@ -67,6 +72,7 @@ export class NasaBgComponent implements OnInit {
       (value:Pokemon)=>{
         this.grassPokemon=value;
         this.grassPokemon.type = "grass";
+        this.grassSrc = this.grassPokemon.sprites.back_default;
       },
       (error)=>{
         this.contender=null;

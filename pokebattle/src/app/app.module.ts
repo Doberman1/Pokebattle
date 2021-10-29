@@ -17,7 +17,6 @@ import { WelcomepageComponent } from './components/welcomepage/welcomepage.compo
 @NgModule({
   declarations: [
     AppComponent,
-
     TestpokeComponent,
     NasaBgComponent,
     WelcomepageComponent

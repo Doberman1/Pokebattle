@@ -8,13 +8,15 @@ body{
     background-size: cover;
 }
 .fightbox{
-    margin: 50px auto 50px auto;
+    margin: 50px auto 20px auto;
     background-color: rgba(255, 255, 255, 0.5);
     width: 100px;
     height: 100px;
     border-radius: 100px;
 }
-
+.fightbox:hover{
+    cursor: pointer;
+}
 .result{
     margin: auto;
 }
@@ -45,7 +47,15 @@ body{
 }
 .middle{
     height: 200px;
+    margin-top: 25px;
 }
 .welcome{
     background-image: url('assets/pcom-spotlight-prof-oak-169.jpg');
+}
+.power{
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 0 auto 10px auto;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 25%;
 }
