@@ -27,13 +27,13 @@ export class TestpokeComponent implements OnInit {
         switch(randomInt)
         {
           case 0:
-            this.pokemon.type = "fire";
+            this.pokemon.types = "fire";
             break;
           case 1:
-            this.pokemon.type = "water";
+            this.pokemon.types = "water";
             break;
           case 2:
-            this.pokemon.type = "grass";
+            this.pokemon.types = "grass";
             break;
         }
       },
